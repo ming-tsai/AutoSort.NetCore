@@ -1,1 +1,1 @@
-# Tsaibot.EntityFrameworkCore.AutoSort
+# NetCore.AutoSort
