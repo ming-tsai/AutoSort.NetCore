@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore --output outDir
     - name: Test
       run: dotnet test --no-restore --verbosity normal -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
     - name: SonarCloud Scan
