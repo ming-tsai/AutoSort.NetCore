@@ -140,6 +140,7 @@ _TeamCity*
 # Visual Studio code coverage results
 *.coverage
 *.coveragexml
+coverage.*.xml
 
 # NCrunch
 _NCrunch_*
@@ -348,3 +349,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Sonar
+**/.sonarqube/*
+out/
