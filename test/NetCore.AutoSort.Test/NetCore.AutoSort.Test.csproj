@@ -2,12 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
-    <AssemblyName>NetCore.AutoSort.Test</AssemblyName>
-
-    <RootNamespace>NetCore.AutoSort.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Core.csproj" />
+    <ProjectReference Include="..\..\src\NetCore.AutoSort\NetCore.AutoSort.csproj" />
   </ItemGroup>
 
 </Project>

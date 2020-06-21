@@ -2,8 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>NetCore.AutoSort.Core</AssemblyName>
-    <RootNamespace>NetCore.AutoSort.Core</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

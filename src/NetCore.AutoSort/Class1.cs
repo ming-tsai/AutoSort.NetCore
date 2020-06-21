@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NetCore.AutoSort.Core
+namespace NetCore.AutoSort
 {
     public class Class1
     {
