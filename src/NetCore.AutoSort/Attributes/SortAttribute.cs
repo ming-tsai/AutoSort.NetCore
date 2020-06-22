@@ -9,15 +9,12 @@ namespace NetCore.AutoSort.Attributes
     [AttributeUsage(AttributeTargets.Property|AttributeTargets.Class)]
     public class SortAttribute : Attribute
     {
-        public string PropertyName { get; private set; }
+        public int Order { get; private set; }
         public SortDirection Direction { get; private set; }
-        public SortAttribute()
-        {
-        }
 
-        public SortAttribute(string propertyName, SortDirection direction = SortDirection.Ascending)
+        public SortAttribute(int order = 0, SortDirection direction = SortDirection.Ascending)
         {
-            PropertyName = propertyName;
+            Order = order;
             Direction = direction;
         }
     }
