@@ -7,10 +7,10 @@ namespace NetCore.AutoSort.Test.Extensions
     {
         [Sort]
         public int Id { get; set; }
-        [Sort(2)]
+        [Sort(1)]
         public string FirstName { get; set; }
         public string LastName {get; set;}
-        [Sort(-1)]
+        [Sort(2)]
         public DateTime BirthDay { get; set; }
     }
 }
