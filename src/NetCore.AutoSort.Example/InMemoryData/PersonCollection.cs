@@ -4,9 +4,9 @@ using NetCore.AutoSort.Example.Model;
 
 namespace NetCore.AutoSort.Example.InMemoryData
 {
-    public class PeopleCollection : List<Person>
+    public class PersonCollection : List<Person>
     {
-        public PeopleCollection()
+        public PersonCollection()
         {
             Add(new Person("Chris", "Evans", new DateTime(1981, 6, 13)));
             Add(new Person("Robert", "Downey", new DateTime(1965, 4, 4)));
