@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\NetCore.AutoSort\NetCore.AutoSort.csproj" />
+    <ProjectReference Include="..\src\NetCore.AutoSort.Example\NetCore.AutoSort.Example.csproj" />
   </ItemGroup>
 
 </Project>

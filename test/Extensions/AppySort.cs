@@ -1,22 +1,20 @@
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
-using NetCore.AutoSort;
 using System.Linq;
+using NetCore.AutoSort.Example.Model;
+using NetCore.AutoSort.Example.InMemoryData;
 
 namespace NetCore.AutoSort.Test.Extensions
 {
     public class AppySort
-    {
-        IEnumerable<Person> people = new List<Person>() {
-            new Person() {Id = 1, FirstName = "Jhon", LastName= "Wick", BirthDay = DateTime.Now},
-            new Person() {Id = 2, FirstName = "Jhon", LastName= "Wick", BirthDay = DateTime.Now}
-        };
-        
+    {        
         [Test]
-        public void Test() {
+        public void UsingDefaultSort_ShouldBeExpectFirstName() {
+            var expectedPerson = new Person("Alan", "Alda", new DateTime(1936, 1, 28));
+            var people = new People();
             var sorting = people.AsQueryable().ApplySort();
-            Assert.IsNotNull(sorting);
+            Assert.AreEqual(expectedPerson, sorting.FirstOrDefault());
         }
     }
 }
