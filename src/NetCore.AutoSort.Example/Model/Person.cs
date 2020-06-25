@@ -22,17 +22,14 @@ namespace NetCore.AutoSort.Example.Model
 
         public override bool Equals(object obj)
         {
-            bool result;
+            bool result = false;
             if (obj is Person person)
             {
                 result = FirstName.Equals(person.FirstName, StringComparison.InvariantCultureIgnoreCase) &&
                    LastName.Equals(person.LastName, StringComparison.InvariantCultureIgnoreCase) &&
                    BirthDay.Equals(person.BirthDay);
             }
-            else
-            {
-                result = base.Equals(obj);
-            }
+
             return result;
         }
 
