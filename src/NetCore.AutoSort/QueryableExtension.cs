@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace NetCore.AutoSort
 {
-    public static class SortExtension
+    public static class QueryableExtension
     {
         public static IQueryable<T> ApplySort<T>(this IQueryable<T> source, string sortBy = "")
             where T : class

@@ -9,12 +9,12 @@ namespace NetCore.AutoSort.Test.Extensions
     public class AppySort
     {
         [Test]
-        public void UsingDefaultSort_ShouldBeExpectFirstName()
+        public void UsingDefaultSort_ShouldBeExpectPerson()
         {
-            var expectedPerson = new Person("Alan", "Alda", new DateTime(1936, 1, 28));
+            var expected = new Person("Channing", "Tatum", new DateTime(1965, 4, 4));
             var people = new PersonCollection();
-            var sorting = people.AsQueryable().ApplySort();
-            Assert.AreEqual(expectedPerson, sorting.FirstOrDefault());
+            var sorted = people.AsQueryable().ApplySort();
+            Assert.AreEqual(expected, sorted.FirstOrDefault());
         }
     }
 }
