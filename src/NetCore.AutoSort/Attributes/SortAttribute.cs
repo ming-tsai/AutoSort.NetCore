@@ -18,9 +18,7 @@ namespace NetCore.AutoSort.Attributes
         {
             if(order < 0)
             {
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-                throw new InvalidOperationException($"{nameof(order)} should equal or greater than 0");
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                throw new ArgumentOutOfRangeException(nameof(order), order, $"{nameof(order)} should be equal or greater than 0");
             }
 
             Order = order;
