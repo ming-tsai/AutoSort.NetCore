@@ -10,7 +10,13 @@ namespace NetCore.AutoSort.Attributes
         public int Order { get; private set; }
         public SortDirection Direction { get; private set; }
 
-        public SortAttribute([Range(0, int.MaxValue)] int order = 0,
+        public SortAttribute(SortDirection direction = SortDirection.Ascending)
+        {
+            Order = 0;
+            Direction = direction;
+        }
+
+        public SortAttribute([Range(0, int.MaxValue)] int order,
             SortDirection direction = SortDirection.Ascending)
         {
             if (order < 0)
