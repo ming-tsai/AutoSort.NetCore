@@ -1,4 +1,5 @@
 using NetCore.AutoSort.Attributes;
+using NetCore.AutoSort.Enums;
 using System;
 
 namespace NetCore.AutoSort.Example.Model
@@ -15,7 +16,7 @@ namespace NetCore.AutoSort.Example.Model
 
         [Sort(2)]
         public string FirstName { get; set; }
-        [Sort]
+        [Sort(SortDirection.Descending)]
         public string LastName { get; set; }
         [Sort(1)]
         public DateTime BirthDay { get; set; }
