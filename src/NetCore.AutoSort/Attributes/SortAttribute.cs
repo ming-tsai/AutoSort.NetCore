@@ -18,7 +18,7 @@ namespace NetCore.AutoSort.Attributes
         {
             if(order < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(order), order, $"{nameof(order)} should be equal or greater than 0");
+                throw new ArgumentOutOfRangeException(nameof(order));
             }
 
             Order = order;
