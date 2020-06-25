@@ -1,9 +1,6 @@
 ﻿using NetCore.AutoSort.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 
 namespace NetCore.AutoSort.Attributes
 {
@@ -13,10 +10,10 @@ namespace NetCore.AutoSort.Attributes
         public int Order { get; private set; }
         public SortDirection Direction { get; private set; }
 
-        public SortAttribute([Range(0, int.MaxValue)] int order = 0, 
+        public SortAttribute([Range(0, int.MaxValue)] int order = 0,
             SortDirection direction = SortDirection.Ascending)
         {
-            if(order < 0)
+            if (order < 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(order));
             }

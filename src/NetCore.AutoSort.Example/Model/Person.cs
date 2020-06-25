@@ -1,5 +1,5 @@
-using System;
 using NetCore.AutoSort.Attributes;
+using System;
 
 namespace NetCore.AutoSort.Example.Model
 {

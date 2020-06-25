@@ -1,10 +1,9 @@
-﻿using System;
+﻿using NetCore.AutoSort.Attributes;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using NetCore.AutoSort.Attributes;
 
 namespace NetCore.AutoSort
 {
@@ -16,7 +15,8 @@ namespace NetCore.AutoSort
             if (string.IsNullOrEmpty(sortBy))
             {
                 source = ApplyDefault(source);
-            } else
+            }
+            else
             {
                 source = ApplyString<T>(source, sortBy);
             }

@@ -1,6 +1,6 @@
+using NetCore.AutoSort.Example.Model;
 using System;
 using System.Collections.Generic;
-using NetCore.AutoSort.Example.Model;
 
 namespace NetCore.AutoSort.Example.InMemoryData
 {

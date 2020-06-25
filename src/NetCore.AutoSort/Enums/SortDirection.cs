@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NetCore.AutoSort.Enums
+﻿namespace NetCore.AutoSort.Enums
 {
     public enum SortDirection
     {

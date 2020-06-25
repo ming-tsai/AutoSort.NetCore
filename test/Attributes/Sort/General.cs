@@ -3,7 +3,6 @@ using NetCore.AutoSort.Enums;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NetCore.AutoSort.Test.Attributes.Sort
 {
