@@ -12,7 +12,7 @@ namespace NetCore.AutoSort.Test.Extensions
         [Test]
         public void UsingDefaultSort_ShouldBeExpectFirstName() {
             var expectedPerson = new Person("Alan", "Alda", new DateTime(1936, 1, 28));
-            var people = new People();
+            var people = new PeopleCollection();
             var sorting = people.AsQueryable().ApplySort();
             Assert.AreEqual(expectedPerson, sorting.FirstOrDefault());
         }
