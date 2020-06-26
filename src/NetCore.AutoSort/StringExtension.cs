@@ -1,78 +1,71 @@
-using System.Collections.Generic;
+using NetCore.AutoSort.Enums;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using NetCore.AutoSort.Enums;
 
 namespace NetCore.AutoSort
 {
     internal static class StringExtension
     {
-        internal static IEnumerable<SortableProperty> AsSortables(this string source, Type type)
+        static int counter = 0;
+        internal static IEnumerable<SortableProperty> AsSortables<T>(this string source)
+            where T : class
         {
             var values = source.Split(',').Select(p => p.Trim());
+            var type = typeof(T);
             var properties = type.GetProperties();
             var result = new List<SortableProperty>();
             foreach (var value in values)
             {
-                result.Add(value.AsSortable(properties));
+                foreach (var property in properties)
+                {
+                    var added = value.AsSortable(property);
+                    if (added != null)
+                    {
+                        result.Add(added);
+                        break;
+                    }
+                }
             }
 
             return result;
         }
 
-        internal static SortableProperty AsSortable(this string source, PropertyInfo[] properties)
+        private static SortableProperty AsSortable(this string source, PropertyInfo property)
         {
-            SortableProperty sortable = null;
-
-            if (GetAscending(source, properties) is SortableProperty asc)
-            {
-                sortable = asc;
-            }
-            else
-            {
-                if (GetDescending(source, properties) is SortableProperty desc)
-                {
-                    sortable = desc;
-                }
-            }
-
+            var sortable = GetAsync(source, property);
             if (sortable == null)
             {
-                throw new InvalidOperationException("property no exits");
+                sortable = GetDesc(source, property);
             }
-
             return sortable;
         }
 
-
-        private static SortableProperty GetAscending(string value, PropertyInfo[] properties)
-        {
-            var patterns = new List<string>() { " ascending", "_asc", " asc" };
-            return GetSortable(value, properties, patterns);
-        }
-
-        private static SortableProperty GetDescending(string value, PropertyInfo[] properties)
-        {
-            return GetSortable(value, properties, new List<string>() { " descending", "_desc", " desc" });
-        }
-
-        private static SortableProperty GetSortable(string value, PropertyInfo[] properties, IEnumerable<string> patterns)
+        private static SortableProperty GetAsync(string source, PropertyInfo property)
         {
             SortableProperty result = null;
-            foreach (var pattern in patterns)
+            if (source.Equals(property.Name, StringComparison.InvariantCultureIgnoreCase) ||
+                source.Equals($"{property.Name} asc", StringComparison.InvariantCultureIgnoreCase) ||
+                source.Equals($"{property.Name}_asc", StringComparison.InvariantCultureIgnoreCase) ||
+                source.Equals($"{property.Name} ascending", StringComparison.InvariantCultureIgnoreCase))
             {
-                var direction = pattern.ToLower().Contains("asc") ? SortDirection.Ascending : SortDirection.Descending;
-                result = properties.Where(p =>
-                        p.Name.Equals(value, StringComparison.InvariantCultureIgnoreCase)
-                        || ($"{p.Name}{pattern}").Equals(value, StringComparison.InvariantCultureIgnoreCase))
-                        .Select(p => new SortableProperty(p, direction)).FirstOrDefault();
-                if (result != null)
-                {
-                    break;
-                }
+                result = new SortableProperty(counter, property, SortDirection.Ascending);
+                counter++;
             }
+            return result;
+        }
 
+        private static SortableProperty GetDesc(string source, PropertyInfo property)
+        {
+            SortableProperty result = null;
+            if (source.Equals($"{property.Name} desc", StringComparison.InvariantCultureIgnoreCase) ||
+                source.Equals($"{property.Name}_desc", StringComparison.InvariantCultureIgnoreCase) ||
+                source.Equals($"{property.Name} descending", StringComparison.InvariantCultureIgnoreCase))
+            {
+                result = new SortableProperty(counter, property, SortDirection.Descending);
+                counter++;
+            }
             return result;
         }
     }

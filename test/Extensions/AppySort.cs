@@ -16,5 +16,23 @@ namespace NetCore.AutoSort.Test.Extensions
             var sorted = people.AsQueryable().ApplySort();
             Assert.AreEqual(expected, sorted.FirstOrDefault());
         }
+
+        [TestCase("firstName, LastName_asc , BirthDay DESCENDING", "Alan")]
+        [TestCase("firstName desc, LastName asc , BirthDay_desc", "Will")]
+        public void PassThePropertyCorrectly_FirstShouldBeExpectedFirstName(string sortBy, string expectedFirstName)
+        {
+            var people = new PersonCollection();
+            var sorted = people.AsQueryable().ApplySort(sortBy);
+            Assert.AreEqual(expectedFirstName, sorted.FirstOrDefault().FirstName);
+        }
+
+        [TestCase("firstName, LastName1_asc , BirthDay DESCENDING")]
+        [TestCase("firstName desc, LastName asc , day_desc")]
+        public void PassNoExistsPropertyName_ShouldWorkFine(string sortBy)
+        {
+            var people = new PersonCollection();
+            var sorted = people.AsQueryable().ApplySort(sortBy);
+            Assert.IsNotNull(sorted);
+        }
     }
 }

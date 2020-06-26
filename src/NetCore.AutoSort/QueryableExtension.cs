@@ -1,4 +1,5 @@
 ﻿using NetCore.AutoSort.Attributes;
+using NetCore.AutoSort.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace NetCore.AutoSort
                             .Where(p => p.GetCustomAttribute(typeof(SortAttribute)) != null)
                             .Select(p => new SortableProperty(p,
                                 (SortAttribute)p.GetCustomAttribute(typeof(SortAttribute))))
-                            .OrderBy(p => p.Sort.Order)
+                            .OrderBy(p => p.Order)
                             .AsEnumerable();
             if (sortables.Any())
             {
@@ -43,7 +44,13 @@ namespace NetCore.AutoSort
 
         private static IQueryable<T> ApplyString<T>(IQueryable<T> source, string sortBy) where T : class
         {
-            throw new NotImplementedException();
+            var sortables = sortBy.AsSortables<T>();
+            if (sortables.Any())
+            {
+                source = ApplyOrderBy(source, sortables);
+            }
+
+            return source;
         }
 
         private static IQueryable<T> ApplyOrderBy<T>(IQueryable<T> source, IEnumerable<SortableProperty> sortables)
@@ -55,7 +62,7 @@ namespace NetCore.AutoSort
             var expression = query.Expression;
             foreach (var sortable in sortables)
             {
-                var method = sortable.Sort.Direction == Enums.SortDirection.Ascending ?
+                var method = sortable.Direction == SortDirection.Ascending ?
                                 methodAsc : methodDesc;
                 expression = GetExpression<T>(expression, sortable.Property, method);
 
