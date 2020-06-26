@@ -1,11 +1,13 @@
 ﻿using NetCore.AutoSort.Example.InMemoryData;
 using NetCore.AutoSort.Example.Model;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text.Json;
 
 namespace NetCore.AutoSort.Example
 {
+    [ExcludeFromCodeCoverage]
     static class Program
     {
         static void Main()
