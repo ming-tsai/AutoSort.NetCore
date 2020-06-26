@@ -27,7 +27,7 @@ namespace NetCore.AutoSort.Example
             WriteCollection(sorted);
 
 
-            // TODO: Pass unexists property name it won't launch exception
+            // Pass unexists property name it won't launch exception
             sorted = new PersonCollection().AsQueryable().ApplySort("FirstName, LastName desc, SomeProperty");
             WriteCollection(sorted);
         }
