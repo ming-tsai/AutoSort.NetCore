@@ -25,7 +25,10 @@ jobs:
       uses: battila7/get-version-action@v2
     - name: Publish to Nuget
       uses: brandedoutcast/publish-nuget@v2.5.2
+      env:
+        RELEASE_VERSION: steps.get_version.outputs.version-without-v
       with:
-        VERSION_STATIC: steps.get_version.outputs.version-without-v
+        PACKAGE_NAME: NetCore.AutoSort
+        VERSION_STATIC: ${{RELEASE_VERSION}}
         PROJECT_FILE_PATH: src\NetCore.AutoSort\NetCore.AutoSort.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
