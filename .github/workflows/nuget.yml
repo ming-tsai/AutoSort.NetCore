@@ -21,14 +21,9 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - id: get_version
-      uses: battila7/get-version-action@v2
     - name: Publish to Nuget
       uses: brandedoutcast/publish-nuget@v2.5.2
-      env:
-        RELEASE_VERSION: steps.get_version.outputs.version-without-v
       with:
         PACKAGE_NAME: AutoSort
-        VERSION_STATIC: RELEASE_VERSION
         PROJECT_FILE_PATH: src/NetCore.AutoSort/NetCore.AutoSort.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
