@@ -21,7 +21,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - id: Get Version
+    - id: get_version
       uses: battila7/get-version-action@v2
     - name: Publish to Nuget
       uses: brandedoutcast/publish-nuget@v2.5.2
