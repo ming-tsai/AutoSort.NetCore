@@ -11,6 +11,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set output
+      id: vars
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
@@ -24,5 +27,6 @@ jobs:
     - name: Publish to Nuget
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
+        VERSION_STATIC: steps.vars.outputs.tag
         PROJECT_FILE_PATH: src/NetCore.AutoSort/NetCore.AutoSort.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
