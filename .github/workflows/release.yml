@@ -22,8 +22,9 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Publish to Nuget
-      uses: brandedoutcast/publish-nuget@v2.5.2
+      uses: MVS-Telecom/publish-nuget@test8
       with:
-          PROJECT_FILE_PATH: src/NetCore.AutoSort/NetCore.AutoSort.csproj
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-          VERSION_STATIC:  ${{ steps.vars.outputs.tag }}
+        PACKAGE_NAME: 'NetCore.AutoSort'
+        VERSION_STATIC:  ${{ steps.vars.outputs.tag }}
+        PROJECT_FILE_PATH: src/NetCore.AutoSort/NetCore.AutoSort.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
