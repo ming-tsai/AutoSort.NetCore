@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <PackageId>NetCore.AutoSort</PackageId>
+    <PackageId>AutoSort</PackageId>
     <Version>1.0.0-preview</Version>
     <Authors>Tsaibot</Authors>
     <Company>Tsaibot</Company>

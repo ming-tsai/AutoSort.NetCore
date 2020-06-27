@@ -28,7 +28,7 @@ jobs:
       env:
         RELEASE_VERSION: steps.get_version.outputs.version-without-v
       with:
-        PACKAGE_NAME: NetCore.AutoSort
+        PACKAGE_NAME: AutoSort
         VERSION_STATIC: RELEASE_VERSION
         PROJECT_FILE_PATH: src/NetCore.AutoSort/NetCore.AutoSort.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
