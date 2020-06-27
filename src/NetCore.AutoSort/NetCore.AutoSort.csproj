@@ -14,7 +14,7 @@
 
   <PropertyGroup>
     <PackageId>AutoSort</PackageId>
-    <Version>1.0.0-preview</Version>
+    <Version>1.0.5</Version>
     <Authors>Tsaibot</Authors>
     <Company>Tsaibot</Company>
     <PackageDescription>Sort by a string or by default attribute</PackageDescription>
