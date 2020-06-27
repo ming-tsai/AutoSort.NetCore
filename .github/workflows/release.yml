@@ -2,7 +2,7 @@ name: .NET Core
 
 on:
   push:
-    tags: 'v*'
+    tags: '*'
 
 jobs:
   build:
@@ -26,3 +26,4 @@ jobs:
       with:
           PROJECT_FILE_PATH: src/NetCore.AutoSort/NetCore.AutoSort.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          VERSION_STATIC:  ${{ steps.vars.outputs.tag }}
