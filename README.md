@@ -2,7 +2,7 @@
 
 Recently, I have a project that made with ef core, and every time I added some property I have to create a new condition for soring it,  so I want to sort the entity with a string or with some mark that could be used as default sorting, so I created this solution to manage this problem.
 
-I was guiding by [ZZZ Projects System.Linq.Dynamic](https://github.com/zzzprojects/System.Linq.Dynamic)
+I was guiding by [ZZZ Projects's System.Linq.Dynamic](https://github.com/zzzprojects/System.Linq.Dynamic)
 
 ## Install the package
 Using dotnet cli
