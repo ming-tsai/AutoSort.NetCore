@@ -24,6 +24,6 @@ jobs:
     - name: Publish to Nuget
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PACKAGE_NAME: AutoSort
-        PROJECT_FILE_PATH: src/NetCore.AutoSort/NetCore.AutoSort.csproj
+        PACKAGE_NAME: AutoSort.NetCore
+        PROJECT_FILE_PATH: src/AutoSort.NetCore/AutoSort.NetCore.csproj
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
