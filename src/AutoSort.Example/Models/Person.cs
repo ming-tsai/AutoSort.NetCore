@@ -1,8 +1,7 @@
-using NetCore.AutoSort.Attributes;
-using NetCore.AutoSort.Enums;
+using AutoSort.NetCore;
 using System;
 
-namespace NetCore.AutoSort.Example.Model
+namespace AutoSort.Example.Models
 {
     public class Person
     {

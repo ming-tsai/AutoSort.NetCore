@@ -1,17 +1,16 @@
-﻿using NetCore.AutoSort.Attributes;
-using NetCore.AutoSort.Enums;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 
-namespace NetCore.AutoSort.Test.Attributes.Sort
+namespace AutoSort.NetCore.Test
 {
-    public class General
+    [TestFixture]
+    public class SortAttribute
     {
         [Test]
         public void InstanceTheAttribute_ShouldNotBeMultiple()
         {
-            var attributes = (IList<AttributeUsageAttribute>)typeof(SortAttribute)
+            var attributes = (IList<AttributeUsageAttribute>)typeof(NetCore.SortAttribute)
                         .GetCustomAttributes(typeof(AttributeUsageAttribute), false);
             Assert.AreEqual(1, attributes.Count);
         }
@@ -20,7 +19,7 @@ namespace NetCore.AutoSort.Test.Attributes.Sort
         [TestCase(SortDirection.Descending)]
         public void PassDirection_ShouldExpectedDirection(SortDirection direction)
         {
-            var attribute = new SortAttribute(0, direction);
+            var attribute = new NetCore.SortAttribute(0, direction);
             Assert.AreEqual(direction, attribute.Direction);
         }
     }

@@ -1,8 +1,8 @@
-using NetCore.AutoSort.Example.Model;
+using AutoSort.Example.Models;
 using System;
 using System.Collections.Generic;
 
-namespace NetCore.AutoSort.Example.InMemoryData
+namespace AutoSort.Example.InMemoryData
 {
     public class PersonCollection : List<Person>
     {

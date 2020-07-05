@@ -1,8 +1,7 @@
-﻿using NetCore.AutoSort.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace NetCore.AutoSort.Attributes
+namespace AutoSort.NetCore
 {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class)]
     public class SortAttribute : Attribute

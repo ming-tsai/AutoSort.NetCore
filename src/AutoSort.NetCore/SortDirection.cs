@@ -1,4 +1,4 @@
-﻿namespace NetCore.AutoSort.Enums
+namespace AutoSort.NetCore
 {
     public enum SortDirection
     {
