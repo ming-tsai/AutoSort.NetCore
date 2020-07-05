@@ -39,7 +39,7 @@ public Hero
 }
 ```
 
-> More example in [AutoSort.Example](https://github.com/ming-tsai/NetCore.AutoSort/blob/master/src/NetCore.AutoSort.Example/Program.cs)
+> More example in [AutoSort.Example](./src/AutoSort.Example/Program.cs)
 ## Contributors
 [![](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/images/0)](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/links/0)[![](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/images/1)](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/links/1)[![](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/images/2)](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/links/2)[![](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/images/3)](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/links/3)[![](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/images/4)](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/links/4)[![](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/images/5)](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/links/5)[![](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/images/6)](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/links/6)[![](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/images/7)](https://sourcerer.io/fame/ming-tsai/ming-tsai/NetCore.AutoSort/links/7)
 ## License
