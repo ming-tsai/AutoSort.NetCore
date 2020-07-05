@@ -6,7 +6,7 @@ namespace AutoSort.NetCore
 {
     public static class QueryableExtension
     {
-        public static IOrderedQueryable OrderBy<TSource>(this IQueryable<TSource> source, string ordering = null, params object[] args)
+        public static IOrderedQueryable<TSource> OrderBy<TSource>(this IQueryable<TSource> source, string ordering = null, params object[] args)
             where TSource : class
         {
             if (string.IsNullOrEmpty(ordering))
@@ -18,7 +18,7 @@ namespace AutoSort.NetCore
                 source = DynamicQueryableExtensions.OrderBy(source, ordering, args);
             }
 
-            return (IOrderedQueryable)source;
+            return (IOrderedQueryable<TSource>)source;
         }
 
         private static IQueryable<TSource> OrderByAttributes<TSource>(IQueryable<TSource> source)
