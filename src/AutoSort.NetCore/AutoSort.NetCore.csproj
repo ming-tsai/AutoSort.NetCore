@@ -15,7 +15,7 @@
 
   <PropertyGroup>
     <PackageId>AutoSort.NetCore</PackageId>
-    <Version>2.0.0</Version>
+    <Version>2.0.2</Version>
     <Authors>Tsaibot</Authors>
     <PackageDescription>Use entity attributes for default sorting</PackageDescription>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
